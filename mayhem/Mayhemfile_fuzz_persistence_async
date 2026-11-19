@@ -1,0 +1,11 @@
+project: savantenvs/paho.mqtt.c
+target: fuzz_persistence_async
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_persistence_async/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_persistence_async
+    libfuzzer: true
+    timeout: 10
